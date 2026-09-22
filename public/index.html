@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CollabText — a from-scratch CRDT text editor</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>CollabText</h1>
+    <p class="subtitle">
+      Real-time collaborative plain text, synced with a hand-built RGA CRDT
+      over a hand-built WebSocket server. No sync libraries involved.
+    </p>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <label>
+        Document:
+        <input id="doc-id" type="text" value="demo" spellcheck="false" />
+      </label>
+      <button id="doc-load">Open</button>
+      <span id="status" class="status status-connecting">connecting…</span>
+      <span id="peers" class="peers"></span>
+    </div>
+
+    <div class="editor-wrap">
+      <textarea id="editor" spellcheck="false" placeholder="Start typing. Open this same document in a second tab to see it sync live."></textarea>
+    </div>
+
+    <p class="hint">
+      Tip: open <code>/?doc=demo</code> in two browser tabs (or two
+      browsers) side by side and type in both at once. Every keystroke
+      becomes one CRDT operation, sent over a WebSocket connection whose
+      handshake and framing are implemented from scratch in
+      <code>src/wsServer.js</code> — see the README for the write-up.
+    </p>
+  </main>
+
+  <script src="/crdt.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>

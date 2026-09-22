@@ -1,0 +1,19 @@
+{
+  "name": "collabtext-crdt",
+  "version": "1.0.0",
+  "description": "Real-time collaborative plain-text editor built on a from-scratch RGA CRDT and a from-scratch WebSocket server (RFC 6455), with append-only persistence and multi-client convergence testing.",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {}
+}
