@@ -172,7 +172,7 @@ directly. Re-ran the same fuzz test 2,000 times with different random
 seeds afterward with zero failures before trusting it enough to build the
 rest of the server on top of it.
 
-## Known limitations (deliberately out of scope for one day's build)
+## Known limitations (deliberately out of scope)
 
 - **No tombstone garbage collection.** Deleted characters are kept forever
   as tombstones so concurrent inserts can still reference them. A
